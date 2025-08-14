@@ -1,9 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/*.{html,js}"], // <-- importante para que escanee tus archivos
+  content: [
+    "./index.html",
+    "./src/**/*.{html,js}",
+    "./*.{html,js}"
+  ],
   theme: {
     extend: {
       colors: {
+        primary: '#1a5d1a',
+        secondary: '#2c8a2c',
+        accent: '#3aaf3a',
+        light: '#f8f9fa',
+        dark: '#212529',
+        gray: '#6c757d',
+        'light-gray': '#e9ecef',
         verde: {
           100: '#E6F9E7',
           200: '#C0ECC4',
@@ -112,6 +123,10 @@ module.exports = {
           900: '#472C1B',
           950: '#28170E'
         }
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       }
     }
   },

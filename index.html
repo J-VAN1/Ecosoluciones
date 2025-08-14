@@ -6,568 +6,38 @@
     <title>ECONSULTORES | Soluciones Ambientales</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #1a5d1a;
-            --secondary: #2c8a2c;
-            --accent: #3aaf3a;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --light-gray: #e9ecef;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-            background-color: #f5f7f8;
-        }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo h1 {
-            font-size: 1.8rem;
-            margin: 0;
-            color: var(--primary);
-        }
-        
-        .logo span {
-            color: var(--secondary);
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 25px;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--primary);
-        }
-        
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: width 0.3s;
-        }
-        
-        .nav-menu a:hover::after {
-            width: 100%;
-        }
-        
-        .contact-header {
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-header a {
-            text-decoration: none;
-            color: var(--primary);
-            margin-left: 15px;
-            font-weight: 500;
-        }
-        
-        .contact-header i {
-            margin-right: 5px;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary);
-            cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=600') no-repeat center center/cover;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--accent);
-        }
-        
-        .btn:hover {
-            background-color: transparent;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            margin-left: 15px;
-        }
-        
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-        
-        .about-content {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .about-highlights {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .highlight-card {
-            background-color: var(--light);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
-            transition: transform 0.3s;
-        }
-        
-        .highlight-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .highlight-card i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .service-icon {
-            height: 200px;
-            background-color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3.5rem;
-        }
-        
-        .service-content {
-            padding: 25px;
-            flex-grow: 1;
-        }
-        
-        .service-content h3 {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .service-content ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 15px 0;
-        }
-        
-        .service-content ul li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--light-gray);
-            display: flex;
-            align-items: center;
-        }
-        
-        .service-content ul li:last-child {
-            border-bottom: none;
-        }
-        
-        .service-content ul li i {
-            color: var(--accent);
-            margin-right: 10px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-        }
-        
-        .contact .section-title {
-            color: white;
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 40px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-info h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-details div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .contact-details i {
-            font-size: 1.5rem;
-            margin-right: 15px;
-            color: var(--accent);
-        }
-        
-        .contact-form {
-            flex: 1;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .contact-form h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--dark);
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--light-gray);
-            border-radius: 5px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: var(--accent);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background-color: var(--primary);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 50px 0 20px;
-        }
-        
-        .footer-container {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-col {
-            flex: 1;
-        }
-        
-        .footer-col h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-        }
-        
-        .footer-col p {
-            color: var(--light-gray);
-            margin-bottom: 15px;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: var(--light-gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: var(--light-gray);
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .footer-container {
-                flex-wrap: wrap;
-            }
-            
-            .footer-col {
-                flex: 1 0 45%;
-                margin-bottom: 30px;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        roboto: ['Roboto', 'sans-serif'],
+                    }
+                }
             }
         }
-        
-        @media (max-width: 768px) {
-            .nav-menu,
-            .contact-header {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .about-highlights {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-col {
-                flex: 1 0 100%;
-            }
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="font-roboto bg-gray-50 text-gray-800">
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-container">
-                <div class="logo">
-                    <h1>ECO<span>NSULTORES</span></h1>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="font-montserrat text-green-700 text-2xl font-semibold">ECO<span class="text-green-600">NSULTORES</span></h1>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#footer">Contacto</a></li>
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="#inicio" class="font-medium text-gray-700 hover:text-green-700 transition-colors">Inicio</a></li>
+                    <li><a href="#servicios" class="font-medium text-gray-700 hover:text-green-700 transition-colors">Servicios</a></li>
+                    <li><a href="#contacto" class="font-medium text-gray-700 hover:text-green-700 transition-colors">Contacto</a></li>
                 </ul>
-                <div class="contact-header">
-                    <a href="mailto:ecotramites@outlook.com"><i class="fas fa-envelope"></i> ecotramites@outlook.com</a>
-                    <a href="tel:6673585068"><i class="fas fa-phone"></i> 667-358-50-68</a>
+                <div class="hidden md:flex items-center">
+                    <a href="mailto:ecotramites@outlook.com" class="ml-4 text-green-700 font-medium hover:text-green-800"><i class="fas fa-envelope mr-1"></i> ecotramites@outlook.com</a>
+                    <a href="tel:6673585068" class="ml-4 text-green-700 font-medium hover:text-green-800"><i class="fas fa-phone mr-1"></i> 667-358-50-68</a>
                 </div>
-                <button class="mobile-menu-btn">
+                <button class="md:hidden text-green-700 text-xl">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -575,50 +45,50 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Soluciones Ambientales Integrales</h2>
-                <p>Especialistas en consultoría ambiental, seguridad laboral, calidad y gestión empresarial. Ayudamos a las empresas a optimizar sus procesos cumpliendo con normativas nacionales e internacionales.</p>
-                <div class="hero-buttons">
-                    <a href="#servicios" class="btn">Nuestros Servicios</a>
-                    <a href="#footer" class="btn btn-outline">Contactar Ahora</a>
-                </div>
+    <section id="inicio" class="bg-gray-800 text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="font-montserrat text-white text-4xl md:text-5xl font-semibold mb-6">Soluciones Ambientales Integrales</h2>
+                <p class="text-lg mb-8 text-gray-200">Especialistas en consultoría ambiental, seguridad laboral, calidad y gestión empresarial. Ayudamos a las empresas a optimizar sus procesos cumpliendo con normativas nacionales e internacionales.</p>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="nosotros">
-        <div class="container">
-            <h2 class="section-title">Sobre Econsultores</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Econsultores es una empresa dedicada a ofrecer soluciones completas en áreas relacionadas al medio ambiente, seguridad y salud laboral, calidad, energía y gestión empresarial.</p>
-                    <p>Nuestra labor se fundamenta en normativas tanto nacionales como internacionales, con el objetivo de ayudar a las empresas a optimizar sus procesos operativos, administrativos y comerciales.</p>
+    <section id="nosotros" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="font-montserrat text-green-700 text-3xl font-semibold text-center mb-12 relative after:content-[''] after:absolute after:bottom-[-15px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-green-500 after:rounded">Sobre Econsultores</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-8 text-gray-700">
+                    <p class="mb-4">Econsultores es una empresa dedicada a ofrecer soluciones completas en áreas relacionadas al medio ambiente, seguridad y salud laboral, calidad, energía y gestión empresarial.</p>
+                    <p class="mb-4">Nuestra labor se fundamenta en normativas tanto nacionales como internacionales, con el objetivo de ayudar a las empresas a optimizar sus procesos operativos, administrativos y comerciales.</p>
                     <p>Nos consideramos un socio clave para nuestros clientes, brindando servicios especializados con un enfoque integral y personalizado.</p>
-                    
-                    <div class="about-highlights">
-                        <div class="highlight-card">
-                            <i class="fas fa-certificate"></i>
-                            <h3>Normativas</h3>
-                            <p>Basados en regulaciones nacionales e internacionales para garantizar el cumplimiento</p>
-                        </div>
-                        <div class="highlight-card">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>Optimización</h3>
-                            <p>Mejoramos procesos operativos, administrativos y comerciales</p>
-                        </div>
-                        <div class="highlight-card">
-                            <i class="fas fa-handshake"></i>
-                            <h3>Asociación</h3>
-                            <p>Somos socios estratégicos para el crecimiento sostenible de su empresa</p>
-                        </div>
-                        <div class="highlight-card">
-                            <i class="fas fa-globe-americas"></i>
-                            <h3>Sostenibilidad</h3>
-                            <p>Promovemos prácticas responsables con el medio ambiente</p>
-                        </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded border-l-4 border-green-500">
+                        <i class="fas fa-certificate text-green-700 text-3xl mb-4"></i>
+                        <h3 class="font-montserrat text-xl font-semibold mb-2">Normativas</h3>
+                        <p class="text-gray-700">Servicios legales.</p>
+                        <p class="text-gray-700">Normas de fuentes fijas.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded border-l-4 border-green-500">
+                        <i class="fas fa-chart-line text-green-700 text-3xl mb-4"></i>
+                        <h3 class="font-montserrat text-xl font-semibold mb-2">Optimización</h3>
+                        <p class="text-gray-700">Asesorias y Consultorias en Gestion.</p>
+                        <p class="text-gray-700">Servicios de Organizacion y gestion.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded border-l-4 border-green-500">
+                        <i class="fas fa-handshake text-green-700 text-3xl mb-4"></i>
+                        <h3 class="font-montserrat text-xl font-semibold mb-2">Asociación</h3>
+                        <p class="text-gray-700">Auditorias</p>
+                        <p class="text-gray-700">apoyos tecnicos</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded border-l-4 border-green-500">
+                        <i class="fas fa-globe-americas text-green-700 text-3xl mb-4"></i>
+                        <h3 class="font-montserrat text-xl font-semibold mb-2">Sostenibilidad</h3>
+                        <p class="text-gray-700">Higiene y salud ocupacional.</p>
+                        <p class="text-gray-700">Seguridad</p>
                     </div>
                 </div>
             </div>
@@ -626,136 +96,136 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="servicios">
-        <div class="container">
-            <h2 class="section-title">Nuestros Servicios</h2>
-            <div class="services-grid">
+    <section id="servicios" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="font-montserrat text-green-700 text-3xl font-semibold text-center mb-12 relative after:content-[''] after:absolute after:bottom-[-15px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-green-500 after:rounded">Nuestros Servicios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 <!-- Evaluación de Impacto Social -->
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="bg-green-700 text-white text-2xl font-bold h-48 flex items-center justify-center">
                         EVIS
                     </div>
-                    <div class="service-content">
-                        <h3>Evaluación de Impacto Social</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Elaboración de la evaluación de impacto social</li>
-                            <li><i class="fas fa-check-circle"></i> Entrega del extenso en físico y digital</li>
-                            <li><i class="fas fa-check-circle"></i> Generación de la cita ante la SENER</li>
-                            <li><i class="fas fa-check-circle"></i> Seguimiento ante prevenciones de la autoridad</li>
+                    <div class="p-6">
+                        <h3 class="font-montserrat text-xl font-semibold mb-4">Evaluación de Impacto Social</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Elaboración de la evaluación de impacto social</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Entrega del extenso en físico y digital</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Generación de la cita ante la SENER</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Seguimiento ante prevenciones de la autoridad</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Cédula de Operación Anual -->
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="bg-green-700 text-white text-2xl font-bold h-48 flex items-center justify-center">
                         COA
                     </div>
-                    <div class="service-content">
-                        <h3>Cédula de Operación Anual</h3>
-                        <p><strong>Periodo de presentación:</strong> 1 de marzo al 30 de junio</p>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Elaboración y gestión de COA</li>
-                            <li><i class="fas fa-check-circle"></i> Asesoría para cumplimiento normativo</li>
-                            <li><i class="fas fa-check-circle"></i> Presentación ante autoridades</li>
+                    <div class="p-6">
+                        <h3 class="font-montserrat text-xl font-semibold mb-4">Cédula de Operación Anual</h3>
+                        <p class="font-medium mb-3"><strong>Periodo de presentación:</strong> 1 de marzo al 30 de junio</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Elaboración y gestión de COA</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Asesoría para cumplimiento normativo</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Presentación ante autoridades</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Manifestación de Impacto Ambiental -->
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="bg-green-700 text-white text-2xl font-bold h-48 flex items-center justify-center">
                         MIA
                     </div>
-                    <div class="service-content">
-                        <h3>Manifestación de Impacto Ambiental</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Elaboración de estudio de evaluación de impacto ambiental</li>
-                            <li><i class="fas fa-check-circle"></i> Presentación ante la ASEA</li>
-                            <li><i class="fas fa-check-circle"></i> Seguimiento del estatus del trámite</li>
-                            <li><i class="fas fa-check-circle"></i> Atención a requerimientos de la autoridad</li>
+                    <div class="p-6">
+                        <h3 class="font-montserrat text-xl font-semibold mb-4">Manifestación de Impacto Ambiental</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Elaboración de estudio de evaluación de impacto ambiental</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Presentación ante la ASEA</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Seguimiento del estatus del trámite</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Atención a requerimientos de la autoridad</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Informe Preventivo -->
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="bg-green-700 text-white text-2xl font-bold h-48 flex items-center justify-center">
                         IP
                     </div>
-                    <div class="service-content">
-                        <h3>Informe Preventivo</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Elaboración de estudio de evaluación de impacto ambiental</li>
-                            <li><i class="fas fa-check-circle"></i> Presentación ante la ASEA</li>
-                            <li><i class="fas fa-check-circle"></i> Seguimiento del estatus del trámite</li>
-                            <li><i class="fas fa-check-circle"></i> Atención a requerimientos de la autoridad</li>
+                    <div class="p-6">
+                        <h3 class="font-montserrat text-xl font-semibold mb-4">Informe Preventivo</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Elaboración de estudio de evaluación de impacto ambiental</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Presentación ante la ASEA</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Seguimiento del estatus del trámite</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Atención a requerimientos de la autoridad</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Análisis de Riesgo -->
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="bg-green-700 text-white text-2xl font-bold h-48 flex items-center justify-center">
                         AR
                     </div>
-                    <div class="service-content">
-                        <h3>Análisis de Riesgo</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Elaboración del análisis de riesgo</li>
-                            <li><i class="fas fa-check-circle"></i> Conformación de la carpeta digital</li>
-                            <li><i class="fas fa-check-circle"></i> Entrega del estudio en físico</li>
+                    <div class="p-6">
+                        <h3 class="font-montserrat text-xl font-semibold mb-4">Análisis de Riesgo</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Elaboración del análisis de riesgo</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Conformación de la carpeta digital</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Entrega del estudio en físico</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- SASISOPA -->
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="bg-green-700 text-white text-2xl font-bold h-48 flex items-center justify-center">
                         SASISOPA
                     </div>
-                    <div class="service-content">
-                        <h3>Sistema de Administración de Seguridad Industrial</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Elaboración del sistema</li>
-                            <li><i class="fas fa-check-circle"></i> Gestión del dictamen con tercer autorizado</li>
-                            <li><i class="fas fa-check-circle"></i> Ingreso ante la ASEA</li>
-                            <li><i class="fas fa-check-circle"></i> Implementación en la estación</li>
-                            <li><i class="fas fa-check-circle"></i> Envío de reportes semestral y anual</li>
+                    <div class="p-6">
+                        <h3 class="font-montserrat text-xl font-semibold mb-4">Sistema de Administración de Seguridad Industrial</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Elaboración del sistema</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Gestión del dictamen con tercer autorizado</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Ingreso ante la ASEA</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Implementación en la estación</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Envío de reportes semestral y anual</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Protocolo de Respuesta a Emergencias -->
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="bg-green-700 text-white text-2xl font-bold h-48 flex items-center justify-center">
                         PRE
                     </div>
-                    <div class="service-content">
-                        <h3>Protocolo de Respuesta a Emergencias</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Elaboración del protocolo</li>
-                            <li><i class="fas fa-check-circle"></i> Conformación de la carpeta digital</li>
-                            <li><i class="fas fa-check-circle"></i> Entrega del estudio en físico</li>
-                            <li><i class="fas fa-check-circle"></i> Ingreso ante la ASEA</li>
+                    <div class="p-6">
+                        <h3 class="font-montserrat text-xl font-semibold mb-4">Protocolo de Respuesta a Emergencias</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Elaboración del protocolo</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Conformación de la carpeta digital</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Entrega del estudio en físico</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Ingreso ante la ASEA</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- Capacitación -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="bg-green-700 text-white text-2xl h-48 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-5xl"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Cursos de Capacitación</h3>
-                        <ul>
-                            <li><i class="fas fa-check-circle"></i> Prevención y protección contra incendios</li>
-                            <li><i class="fas fa-check-circle"></i> Primeros auxilios</li>
-                            <li><i class="fas fa-check-circle"></i> Trabajo en alturas</li>
-                            <li><i class="fas fa-check-circle"></i> Espacios confinados</li>
-                            <li><i class="fas fa-check-circle"></i> Operación segura de recipientes a presión</li>
-                            <li><i class="fas fa-check-circle"></i> Elaboración de programas de protección civil</li>
+                    <div class="p-6">
+                        <h3 class="font-montserrat text-xl font-semibold mb-4">Cursos de Capacitación</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Prevención y protección contra incendios</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Primeros auxilios</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Trabajo en alturas</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Espacios confinados</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Operación segura de recipientes a presión</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i> Elaboración de programas de protección civil</li>
                         </ul>
                     </div>
                 </div>
@@ -763,52 +233,39 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container" id="footer">
-            <div class="footer-container">
-                <div class="footer-col">
-                    <h3>ECONSULTORES</h3>
-                    <p>Soluciones Ambientales Integrales para empresas comprometidas con la sostenibilidad y el cumplimiento normativo.</p>
-                    <p>Especialistas en consultoría ambiental, seguridad laboral, calidad y gestión empresarial.</p>
-                    <!-- <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div> -->
-
-                    <!-- esto es para el futuro, bueno si es que tienen redes sociales -->
+    <!-- Contact Section -->
+    <section id="contacto" class="bg-gradient-to-r from-green-700 to-green-600 text-white py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="font-montserrat text-white text-3xl font-semibold text-center mb-12 relative after:content-[''] after:absolute after:bottom-[-15px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-white after:rounded">Contacto</h2>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="font-montserrat text-white text-2xl font-semibold mb-6">Información de Contacto</h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-green-400 text-xl mr-4"></i>
+                            <span>Sinaloa, México</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-green-400 text-xl mr-4"></i>
+                            <span>667-358-50-68</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-green-400 text-xl mr-4"></i>
+                            <span>667-189-66-37</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-green-400 text-xl mr-4"></i>
+                            <span>ecotramites@outlook.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-green-400 text-xl mr-4"></i>
+                            <span>Lunes a Viernes: 9:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="footer-col">
-                    <h3>Servicios Destacados</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Evaluación de Impacto Social (EVIS)</a></li>
-                        <li><a href="#">Cédula de Operación Anual (COA)</a></li>
-                        <li><a href="#">Manifestación de Impacto Ambiental (MIA)</a></li>
-                        <li><a href="#">Informe Preventivo (IP)</a></li>
-                        <li><a href="#">Análisis de Riesgo (AR)</a></li>
-                        <li><a href="#">SASISOPA</a></li>
-                        <li><a href="#">Protocolo de Respuesta a Emergencias (PRE)</a></li>
-                        <li><a href="#">Cursos de Capacitación</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Contacto</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Sinaloa, México</p>
-                    <p><i class="fas fa-phone"></i> 667-358-50-68</p>
-                    <p><i class="fas fa-phone"></i> 667-189-66-37</p>
-                    <p><i class="fas fa-envelope"></i> ecotramites@outlook.com</p>
-                    <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>&copy; 2025 ECONSULTORES Soluciones Ambientales. Todos los derechos reservados.</p>
             </div>
         </div>
-    </footer>
+    </section>
+
 </body>
 </html>
